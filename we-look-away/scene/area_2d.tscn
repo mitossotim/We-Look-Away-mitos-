@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://begcnst3t0v3g"]
+
+[ext_resource type="Texture2D" uid="uid://bfvl1q10acf0o" path="res://personnage png/we_looked_away_characters_ EN BAS.png" id="1_dmulf"]
+[ext_resource type="Texture2D" uid="uid://bxmj4tm08p8d5" path="res://personnage png/we_looked_away_characters_DROITE.png" id="2_jkeun"]
+[ext_resource type="Texture2D" uid="uid://ddket0mx3gvfj" path="res://personnage png/we_looked_away_characters_GAUCHE.png" id="3_cbpmk"]
+[ext_resource type="Texture2D" uid="uid://bnsv7hbkr6gad" path="res://personnage png/we_looked_away_characters_EN UP.png" id="4_rxg3h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rt4g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dmulf")
+}],
+"loop": true,
+"name": &"bas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jkeun")
+}],
+"loop": true,
+"name": &"droite",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cbpmk")
+}],
+"loop": true,
+"name": &"gauche ",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rxg3h")
+}],
+"loop": true,
+"name": &"haut",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1snvl"]
+radius = 316.0
+height = 856.0
+
+[node name="Area2D" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-23, -99)
+sprite_frames = SubResource("SpriteFrames_3rt4g")
+animation = &"bas"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -73)
+shape = SubResource("CapsuleShape2D_1snvl")
